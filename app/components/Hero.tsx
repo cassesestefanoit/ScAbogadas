@@ -23,6 +23,7 @@ export default function Hero() {
             >
               Defensa y asesoramiento legal de confianza
             </h1>
+            
             <p
               className={`${inter.className} text-base sm:text-lg md:text-2xl mb-8 drop-shadow-md`}
             >
