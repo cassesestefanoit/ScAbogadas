@@ -1,8 +1,8 @@
 import Hero from "./components/Hero";
 import Especialidades from "./components/Especialidades";
 import Nosotras from "./components/Nosotras";
-import Comentarios from "./components/Comentario"
 import Contactanos from "./components/Contactanos";
+import Testimonios from "./components/Testimonios"
 
 export default function Home() {
   return (
@@ -10,7 +10,7 @@ export default function Home() {
       <Hero />
       <Especialidades />
       <Nosotras />
-      <Comentarios />
+      <Testimonios />
       <Contactanos />
     </main>
   );
