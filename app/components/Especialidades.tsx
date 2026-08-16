@@ -1,5 +1,3 @@
-"use client";
-
 import Image from "next/image";
 import { playfair, inter } from "../fonts";
 import { FaArrowRight, FaCheck } from "react-icons/fa6";
@@ -14,70 +12,66 @@ interface Especialidad {
   imagen: string;
 }
 
-export default function Especialidades() {
-  const especialidades: Especialidad[] = [
-    {
-      id: "civil",
-      num: "01",
-      titulo: "Derecho Civil",
-      subtitulo: "Patrimonio, Contratos & Sucesiones",
-      detalle:
-        "Brindamos asesoramiento integral en la protección del patrimonio personal y familiar, garantizando solidez jurídica en cada contrato, litigio o proceso sucesorio.",
-      puntosClave: [
-        "Sucesiones & Declaratorias de Herederos",
-        "Redacción y Revisión de Contratos",
-        "Responsabilidad Civil & Indemnizaciones",
-      ],
-      imagen:
-        "https://images.unsplash.com/photo-1589829545856-d10d557cf95f?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      id: "laboral",
-      num: "02",
-      titulo: "Derecho Laboral",
-      subtitulo: "Prevención Corporativa & Conflictos Laborales",
-      detalle:
-        "Especializadas en la gestión preventiva de contingencias laborales para empresas y en la defensa técnica de los derechos de los trabajadores.",
-      puntosClave: [
-        "Asesoramiento Preventivo para PYMES",
-        "Despidos, Sanciones & Liquidaciones",
-        "Reclamos ante ART & Accidentes",
-      ],
-      imagen:
-        "https://images.unsplash.com/photo-1450133064473-71024230f91b?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      id: "comercial",
-      num: "03",
-      titulo: "Derecho Comercial",
-      subtitulo: "Estructuración de Negocios & Acuerdos",
-      detalle:
-        "Diseñamos estrategias legales para optimizar la operativa mercantil, proteger inversiones y resolver litigios comerciales complejos.",
-      puntosClave: [
-        "Contratación Mercantil & Acuerdos",
-        "Societario & Gobierno Corporativo",
-        "Gestión de Deuda & Negociaciones",
-      ],
-      imagen:
-        "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&q=80&w=1000",
-    },
-    {
-      id: "familia",
-      num: "04",
-      titulo: "Familia & Seguros",
-      subtitulo: "Acompañamiento Humano & Reclamos de Cobertura",
-      detalle:
-        "Atención personalizada y cercana en procesos delicados de familia y máxima firmeza en negociaciones contra compañías aseguradoras.",
-      puntosClave: [
-        "Divorcios & Acuerdos Reguladores",
-        "Alimentos & Régimen de Comunicación",
-        "Negociación de Siniestros & Coberturas",
-      ],
-      imagen:
-        "https://images.unsplash.com/photo-1521791136064-7986c2920216?auto=format&fit=crop&q=80&w=1000",
-    },
-  ];
+const ESPECIALIDADES: Especialidad[] = [
+  {
+    id: "civil",
+    num: "01",
+    titulo: "Derecho Civil",
+    subtitulo: "Patrimonio, Contratos & Sucesiones",
+    detalle:
+      "Brindamos asesoramiento integral en la protección del patrimonio personal y familiar, garantizando solidez jurídica en cada contrato, litigio o proceso sucesorio.",
+    puntosClave: [
+      "Sucesiones & Declaratorias de Herederos",
+      "Redacción y Revisión de Contratos",
+      "Responsabilidad Civil & Indemnizaciones",
+    ],
+    imagen: "/DerechoCivil.jpg",
+  },
+  {
+    id: "laboral",
+    num: "02",
+    titulo: "Derecho Laboral",
+    subtitulo: "Prevención Corporativa & Conflictos Laborales",
+    detalle:
+      "Especializadas en la gestión preventiva de contingencias laborales para empresas y en la defensa técnica de los derechos de los trabajadores.",
+    puntosClave: [
+      "Asesoramiento Preventivo para PYMES",
+      "Despidos, Sanciones & Liquidaciones",
+      "Reclamos ante ART & Accidentes",
+    ],
+    imagen: "/DerechoLaboral.jpg",
+  },
+  {
+    id: "comercial",
+    num: "03",
+    titulo: "Derecho Comercial & Seguros",
+    subtitulo: "Estructuración de Negocios & Coberturas",
+    detalle:
+      "Diseñamos estrategias legales para optimizar la operativa mercantil, proteger inversiones y ejecutar litigios complejos frente a compañías aseguradoras.",
+    puntosClave: [
+      "Contratación Mercantil & Acuerdos",
+      "Societario & Gobierno Corporativo",
+      "Negociación de Siniestros & Coberturas",
+    ],
+    imagen: "/DerechoComercial.jpg",
+  },
+  {
+    id: "familia",
+    num: "04",
+    titulo: "Derecho de Familia",
+    subtitulo: "Acompañamiento Humano & Resolución de Conflictos",
+    detalle:
+      "Atención personalizada y empática en procesos delicados del ámbito familiar, buscando la protección integral de tus derechos y el bienestar de los tuyos.",
+    puntosClave: [
+      "Divorcios Vinculares & Acuerdos Reguladores",
+      "Cuota Alimentaria & Régimen de Comunicación",
+      "Liquidación de Sociedad Conyugal",
+    ],
+    imagen: "/DerechoFamiliar.jpg",
+  },
+];
 
+export default function Especialidades() {
   return (
     <section
       id="especialidades"
@@ -94,9 +88,6 @@ export default function Especialidades() {
         {/* ENCABEZADO */}
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-8 sm:pb-10 border-b border-white/10">
           <div>
-            <span className="text-xs uppercase tracking-[0.3em] text-amber-200/80 font-semibold block mb-3">
-              Áreas de Práctica — 02
-            </span>
             <h2
               className={`${playfair.className} text-4xl sm:text-7xl font-normal uppercase tracking-tight text-slate-100`}
             >
@@ -129,7 +120,7 @@ export default function Especialidades() {
 
           {/* CENTRO: TARJETAS APILADAS */}
           <div className="xl:col-span-8 relative">
-            {especialidades.map((esp, index) => (
+            {ESPECIALIDADES.map((esp, index) => (
               <div
                 key={esp.id}
                 className="sticky w-full bg-white text-slate-950 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transition-all duration-300 border border-slate-200 mb-8 sm:mb-12 last:mb-0"
