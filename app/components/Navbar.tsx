@@ -1,6 +1,6 @@
 "use client";
+
 import Link from "next/link";
-import Image from "next/image";
 import { useState } from "react";
 import { playfair, raleway } from "../fonts";
 import { FaBars, FaTimes } from "react-icons/fa";
@@ -9,72 +9,102 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-white shadow-md px-4 sm:px-8 py-4 flex items-center justify-between relative">
-      {/* Logo + Nombre */}
-      <div className="flex items-center gap-4">
-        <Image
-          src="/logo.png"
-          alt="Logo SC Abogadas"
-          width={60}
-          height={60}
-          className="object-contain"
-        />
-        <div className="flex flex-col">
-          <span className={`${playfair.className} text-2xl sm:text-3xl font-bold text-black`}>
-            Cassese & Saravia
+    <header className="fixed top-0 left-0 w-full z-50 bg-slate-950/40 backdrop-blur-md border-b border-white/10 transition-all duration-300">
+      <nav className="max-w-7xl mx-auto px-6 sm:px-12 py-3.5 flex items-center justify-between">
+        
+        {/* LOGO / IDENTIDAD */}
+        <Link href="#inicio" className="flex flex-col group">
+          <span
+            className={`${playfair.className} text-xl sm:text-2xl font-normal tracking-wide text-white transition-opacity group-hover:opacity-90`}
+          >
+            Cassese &amp; Saravia
           </span>
-          <span className={`${raleway.className} text-sm sm:text-base text-black`}>
-            ABOGADAS | UBA
+          <span
+            className={`${raleway.className} text-[9px] sm:text-[10px] tracking-[0.25em] text-white/60 uppercase font-light`}
+          >
+            Abogadas | UBA
           </span>
-        </div>
-      </div>
+        </Link>
 
-      {/* Botón hamburguesa en móvil */}
-      <button
-        className="sm:hidden text-2xl text-black"
-        onClick={() => setIsOpen(!isOpen)}
-      >
-        {isOpen ? <FaTimes /> : <FaBars />}
-      </button>
-
-      {/* Links de navegación (desktop) */}
-      <div
-        className={`${raleway.className} hidden sm:flex gap-6 text-black sm:text-lg`}
-      >
-        <Link href="#nosotras" className="hover:text-blue-900 transition-colors">
-          Nosotras
-        </Link>
-        <Link href="#especialidades" className="hover:text-blue-900 transition-colors">
-          Especialidades
-        </Link>
-        <Link href="#comentarios" className="hover:text-blue-900 transition-colors">
-          Comentarios
-        </Link>
-        <Link href="#contacto" className="hover:text-blue-900 transition-colors">
-          Contactanos
-        </Link>
-      </div>
-
-      {/* Menú desplegable en móvil */}
-      {isOpen && (
-        <div className="absolute top-full left-0 w-full bg-white shadow-md flex flex-col items-center gap-4 py-6 sm:hidden">
-          <Link href="#inicio" className="text-lg text-black hover:text-blue-900 transition-colors" onClick={() => setIsOpen(false)}>
+        {/* PÍLDORA FLOTANTE - LINKS PRINCIPALES */}
+        <div
+          className={`${raleway.className} hidden md:flex items-center gap-6 lg:gap-8 bg-black/40 backdrop-blur-lg border border-white/15 px-6 py-2 rounded-full text-white text-[11px] tracking-widest uppercase font-light shadow-xl`}
+        >
+          <Link href="#inicio" className="hover:text-amber-200 transition-colors">
             Inicio
           </Link>
-          <Link href="#nosotras" className="text-lg text-black hover:text-blue-900 transition-colors" onClick={() => setIsOpen(false)}>
+          <Link href="#nosotras" className="hover:text-amber-200 transition-colors">
             Nosotras
           </Link>
-          <Link href="#especialidades" className="text-lg text-black hover:text-blue-900 transition-colors" onClick={() => setIsOpen(false)}>
+          <Link href="#especialidades" className="hover:text-amber-200 transition-colors">
             Especialidades
           </Link>
-          <Link href="#comentarios" className="text-lg text-black hover:text-blue-900 transition-colors" onClick={() => setIsOpen(false)}>
-            Comentarios
-          </Link>
-          <Link href="#contacto" className="text-lg text-black hover:text-blue-900 transition-colors" onClick={() => setIsOpen(false)}>
-            Contactanos
+          <Link href="#contacto" className="hover:text-amber-200 transition-colors">
+            Contacto
           </Link>
         </div>
+
+        {/* BOTÓN CTA REUNIÓN */}
+        <div className="hidden md:block">
+          <a
+            href="#contacto"
+            className={`${raleway.className} bg-white text-slate-950 hover:bg-amber-100 hover:text-slate-900 px-5 py-2 rounded-full text-[11px] uppercase tracking-wider font-semibold transition-all duration-300 shadow-lg inline-block whitespace-nowrap`}
+          >
+            Reservar Reunión
+          </a>
+        </div>
+
+        {/* MENÚ HAMBURGUESA MOBILE */}
+        <button
+          className="md:hidden text-xl text-white focus:outline-none p-2"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Abrir menú"
+        >
+          {isOpen ? <FaTimes /> : <FaBars />}
+        </button>
+
+      </nav>
+
+      {/* MENÚ DESPLEGABLE MOBILE */}
+      {isOpen && (
+        <div className="md:hidden bg-slate-950/95 backdrop-blur-2xl border-b border-white/10 flex flex-col items-center gap-5 py-8 shadow-2xl animate-fadeIn">
+          <Link
+            href="#inicio"
+            className={`${raleway.className} text-xs tracking-widest uppercase text-slate-200 hover:text-amber-200`}
+            onClick={() => setIsOpen(false)}
+          >
+            Inicio
+          </Link>
+          <Link
+            href="#nosotras"
+            className={`${raleway.className} text-xs tracking-widest uppercase text-slate-200 hover:text-amber-200`}
+            onClick={() => setIsOpen(false)}
+          >
+            Nosotras
+          </Link>
+          <Link
+            href="#especialidades"
+            className={`${raleway.className} text-xs tracking-widest uppercase text-slate-200 hover:text-amber-200`}
+            onClick={() => setIsOpen(false)}
+          >
+            Especialidades
+          </Link>
+          <Link
+            href="#contacto"
+            className={`${raleway.className} text-xs tracking-widest uppercase text-slate-200 hover:text-amber-200`}
+            onClick={() => setIsOpen(false)}
+          >
+            Contacto
+          </Link>
+          <a
+            href="#contacto"
+            className={`${raleway.className} text-xs tracking-widest uppercase bg-white text-slate-950 px-6 py-2.5 rounded-full font-semibold mt-2`}
+            onClick={() => setIsOpen(false)}
+          >
+            Reservar Reunión
+          </a>
+        </div>
       )}
-    </nav>
+    </header>
   );
 }
