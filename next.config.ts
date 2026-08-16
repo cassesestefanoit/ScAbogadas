@@ -1,14 +1,9 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-  turbopack: {},
+  output: 'export',
   images: {
-    remotePatterns: [
-      {
-        protocol: 'https',
-        hostname: 'images.unsplash.com',
-      },
-    ],
+    unoptimized: true, // Requerido para usar <Image /> sin un servidor Node activo
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;
