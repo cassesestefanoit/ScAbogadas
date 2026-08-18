@@ -5,7 +5,7 @@ import { playfair, inter } from "../fonts";
 import { FaWhatsapp, FaInstagram, FaRegEnvelope, FaArrowRight, FaClock } from "react-icons/fa6";
 import { MdChevronRight } from "react-icons/md";
 import FadeInSection from "./FadeInSection";
-import ModalTurnos from "./ModalTurnos"; // Importación del modal
+import ModalTurnos from "./ModalTurnos";
 
 export default function Contacto() {
   const [formData, setFormData] = useState({
@@ -15,7 +15,7 @@ export default function Contacto() {
     consulta: "",
   });
 
-  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para el modal
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   const handleChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
@@ -39,7 +39,7 @@ export default function Contacto() {
   };
 
   const handleSolicitarTurno = () => {
-    setIsModalOpen(true); // Abre el modal
+    setIsModalOpen(true);
   };
 
   return (
@@ -51,7 +51,6 @@ export default function Contacto() {
           <FadeInSection>
             <div className="flex flex-col md:flex-row md:items-end justify-between gap-6 pb-10 border-b border-slate-200">
               <div>
-               
                 <h2 className={`${playfair.className} text-5xl sm:text-7xl font-normal uppercase tracking-tight text-slate-950`}>
                   Contacto.
                 </h2>
@@ -183,7 +182,7 @@ export default function Contacto() {
 
             </div>
 
-            {/* COLUMNA DERECHA: FORMULARIO MINIMALISTA */}
+            {/* COLUMNA DERECHA: FORMULARIO */}
             <div className="lg:col-span-7">
               <FadeInSection>
                 <form onSubmit={handleSubmit} className="space-y-8">
@@ -275,7 +274,6 @@ export default function Contacto() {
         </div>
       </section>
 
-      {/* RENDERIZADO DEL MODAL */}
       <ModalTurnos isOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
     </>
   );

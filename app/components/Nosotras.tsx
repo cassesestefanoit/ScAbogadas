@@ -8,24 +8,24 @@ export default function Nosotras() {
   return (
     <section
       id="nosotras"
-      className="bg-white text-slate-950 py-28 sm:py-36 px-6 sm:px-12 overflow-hidden"
+      className="bg-white text-slate-950 py-16 sm:py-28 md:py-36 px-4 sm:px-8 lg:px-12 overflow-hidden"
     >
-      <div className="max-w-7xl mx-auto space-y-32 sm:space-y-44">
+      <div className="max-w-7xl mx-auto space-y-20 sm:space-y-32 md:space-y-44">
         {/* BLOQUE 1: TÍTULO MASIVO Y CONCEPTO */}
         <div>
-          <span className="text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold block mb-4">
+          <span className="text-xs uppercase tracking-[0.3em] text-slate-400 font-semibold block mb-3 sm:mb-4">
             Sobre el Estudio — 01
           </span>
           <h2
-            className={`${playfair.className} text-6xl sm:text-8xl md:text-9xl font-normal tracking-tight uppercase text-slate-950 leading-none mb-12`}
+            className={`${playfair.className} text-5xl sm:text-7xl md:text-9xl font-normal tracking-tight uppercase text-slate-950 leading-none mb-8 sm:mb-12`}
           >
             Nosotras.
           </h2>
 
           <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
-            <div className="md:col-span-8 space-y-6">
+            <div className="md:col-span-8 space-y-4 sm:space-y-6">
               <p
-                className={`${inter.className} text-2xl sm:text-4xl font-light leading-snug text-slate-900 tracking-tight`}
+                className={`${inter.className} text-xl sm:text-3xl md:text-4xl font-light leading-snug text-slate-900 tracking-tight`}
               >
                 Entendemos el ejercicio del derecho desde la prevención
                 estratégica, el rigor técnico y la cercanía constante.
@@ -43,21 +43,21 @@ export default function Nosotras() {
             <div className="md:col-span-4 border-t md:border-t-0 md:border-l border-slate-200 pt-6 md:pt-0 md:pl-8 space-y-6">
               <div>
                 <span
-                  className={`${playfair.className} text-4xl font-normal text-slate-950 block mb-1`}
+                  className={`${playfair.className} text-3xl sm:text-4xl font-normal text-slate-950 block mb-1`}
                 >
                   UBA
                 </span>
-                <span className="text-[11px] uppercase tracking-widest text-slate-400 font-semibold">
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-400 font-semibold">
                   Formación de Excelencia
                 </span>
               </div>
               <div>
                 <span
-                  className={`${playfair.className} text-4xl font-normal text-slate-950 block mb-1`}
+                  className={`${playfair.className} text-3xl sm:text-4xl font-normal text-slate-950 block mb-1`}
                 >
                   100%
                 </span>
-                <span className="text-[11px] uppercase tracking-widest text-slate-400 font-semibold">
+                <span className="text-[10px] sm:text-[11px] uppercase tracking-widest text-slate-400 font-semibold">
                   Atención Personalizada
                 </span>
               </div>
@@ -65,9 +65,9 @@ export default function Nosotras() {
           </div>
         </div>
 
-        {/* BLOQUE 2: CARLA CASSESE (ARRIBA - IZQUIERDA TEXTO / DERECHA FOTO) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          <div className="lg:col-span-6 order-2 lg:order-1 space-y-6">
+        {/* BLOQUE 2: CARLA CASSESE */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
+          <div className="lg:col-span-6 order-2 lg:order-1 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 border border-slate-200 bg-slate-50 px-3 py-1 rounded-full">
               <FaGraduationCap className="text-slate-700 text-xs" />
               <span className="text-[10px] uppercase tracking-widest text-slate-600 font-semibold">
@@ -76,7 +76,7 @@ export default function Nosotras() {
             </div>
 
             <h3
-              className={`${playfair.className} text-4xl sm:text-6xl font-normal text-slate-950`}
+              className={`${playfair.className} text-3xl sm:text-5xl md:text-6xl font-normal text-slate-950`}
             >
               Carla Cassese
             </h3>
@@ -94,7 +94,7 @@ export default function Nosotras() {
               a la resolución de conflictos complejos.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-2 sm:pt-4">
               <a
                 href="https://www.linkedin.com/in/carla-cassese-309504216/"
                 target="_blank"
@@ -110,7 +110,7 @@ export default function Nosotras() {
           </div>
 
           <div className="lg:col-span-6 order-1 lg:order-2">
-            <div className="relative w-full h-[450px] sm:h-[560px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+            <div className="relative w-full h-[350px] sm:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
               <Image
                 src="/carla.jpg"
                 alt="Carla Cassese"
@@ -122,25 +122,25 @@ export default function Nosotras() {
         </div>
 
         {/* BLOQUE INTERMEDIO: CITA EDITORIAL Y COLUMNAS UBA */}
-        <div className="my-20 bg-slate-950 text-white rounded-3xl p-10 sm:p-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-center border border-white/10">
-          <div className="md:col-span-7 space-y-4">
+        <div className="my-12 sm:my-20 bg-slate-950 text-white rounded-3xl p-6 sm:p-12 md:p-16 grid grid-cols-1 md:grid-cols-12 gap-8 items-center border border-white/10">
+          <div className="md:col-span-7 space-y-3 sm:space-y-4">
             <span
-              className={`${playfair.className} text-5xl text-amber-200/50 block`}
+              className={`${playfair.className} text-4xl sm:text-5xl text-amber-200/50 block`}
             >
               “
             </span>
             <blockquote
-              className={`${playfair.className} text-2xl sm:text-4xl font-light italic leading-snug text-slate-100 -mt-6 mb-6`}
+              className={`${playfair.className} text-xl sm:text-3xl md:text-4xl font-light italic leading-snug text-slate-100 -mt-4 sm:-mt-6 mb-4 sm:mb-6`}
             >
               Nuestra prioridad es transformar la incertidumbre legal en
               tranquilidad y claridad estratégica para cada cliente.
             </blockquote>
-            <span className="text-xs uppercase tracking-[0.2em] text-amber-200/80 font-semibold block">
+            <span className="text-[10px] sm:text-xs uppercase tracking-[0.2em] text-amber-200/80 font-semibold block">
               Sello UBA — Cassese &amp; Saravia
             </span>
           </div>
 
-          <div className="md:col-span-5 relative h-80 sm:h-[400px] rounded-2xl overflow-hidden border border-white/15 group">
+          <div className="md:col-span-5 relative h-64 sm:h-80 md:h-[400px] rounded-2xl overflow-hidden border border-white/15 group">
             <Image
               src="/FacuDerecho.jpg"
               alt="Facultad de Derecho UBA - Columnas"
@@ -151,10 +151,10 @@ export default function Nosotras() {
           </div>
         </div>
 
-        {/* BLOQUE 3: MARTINA SARAVIA (ABAJO - IZQUIERDA FOTO / DERECHA TEXTO) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+        {/* BLOQUE 3: MARTINA SARAVIA */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-center">
           <div className="lg:col-span-6">
-            <div className="relative w-full h-[450px] sm:h-[560px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
+            <div className="relative w-full h-[350px] sm:h-[480px] lg:h-[560px] rounded-2xl overflow-hidden bg-slate-100 border border-slate-200">
               <Image
                 src="/martina.jpg"
                 alt="Martina Lourdes Saravia"
@@ -164,7 +164,7 @@ export default function Nosotras() {
             </div>
           </div>
 
-          <div className="lg:col-span-6 space-y-6">
+          <div className="lg:col-span-6 space-y-5 sm:space-y-6">
             <div className="inline-flex items-center gap-2 border border-slate-200 bg-slate-50 px-3 py-1 rounded-full">
               <FaGraduationCap className="text-slate-700 text-xs" />
               <span className="text-[10px] uppercase tracking-widest text-slate-600 font-semibold">
@@ -173,7 +173,7 @@ export default function Nosotras() {
             </div>
 
             <h3
-              className={`${playfair.className} text-4xl sm:text-6xl font-normal text-slate-950`}
+              className={`${playfair.className} text-3xl sm:text-5xl md:text-6xl font-normal text-slate-950`}
             >
               Martina L. Saravia
             </h3>
@@ -191,7 +191,7 @@ export default function Nosotras() {
               proceso.
             </p>
 
-            <div className="pt-4">
+            <div className="pt-2 sm:pt-4">
               <a
                 href="https://www.linkedin.com/in/martina-lourdes-saravia-2aa17a246/"
                 target="_blank"
