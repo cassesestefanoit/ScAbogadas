@@ -56,75 +56,73 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
   };
 
   return (
-    <div className="fixed inset-0 z-[999] flex items-center justify-center p-3 sm:p-6 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+    <div className="fixed inset-0 z-[9999] flex items-end sm:items-center justify-center p-0 sm:p-4 bg-slate-950/80 backdrop-blur-md overflow-y-auto">
+      
       {/* CONTENEDOR PRINCIPAL */}
-      <div className="bg-white text-slate-900 w-full max-w-4xl rounded-2xl shadow-2xl border border-slate-200/80 overflow-hidden relative flex flex-col md:flex-row max-h-[90vh] md:max-h-none my-auto">
+      <div className="bg-white text-slate-900 w-full max-w-3xl sm:rounded-2xl rounded-t-2xl shadow-2xl border border-slate-200/80 overflow-hidden relative flex flex-col md:flex-row max-h-[92vh] sm:max-h-[85vh] my-0 sm:my-auto">
         
-        {/* BOTÓN CERRAR */}
+        {/* BOTÓN CERRAR - Fijado arriba a la derecha */}
         <button
           onClick={handleReset}
-          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-30 text-slate-400 hover:text-slate-900 bg-slate-100 hover:bg-slate-200 rounded-full p-2 transition-all cursor-pointer"
+          className="absolute top-3 right-3 sm:top-4 sm:right-4 z-40 text-slate-400 hover:text-slate-900 bg-slate-100/80 hover:bg-slate-200 rounded-full p-2 transition-all cursor-pointer backdrop-blur-sm"
           aria-label="Cerrar modal"
         >
-          <FaXmark className="text-sm sm:text-base" />
+          <FaXmark className="text-base" />
         </button>
 
-        {/* COLUMNA IZQUIERDA: PANEL EDITORIAL / INFORMATIVO */}
-        <div className="w-full md:w-5/12 bg-slate-950 text-white p-6 sm:p-9 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800 shrink-0">
-          <div className="space-y-4 sm:space-y-5">
+        {/* COLUMNA IZQUIERDA: PANEL EDITORIAL (Compacto en mobile) */}
+        <div className="w-full md:w-5/12 bg-slate-950 text-white p-5 sm:p-8 flex flex-col justify-between border-b md:border-b-0 md:border-r border-slate-800 shrink-0">
+          <div className="space-y-3 sm:space-y-4">
             <div>
-              <span className="text-[10px] uppercase tracking-[0.3em] text-amber-200/90 font-medium block mb-1">
+              <span className="text-[9px] sm:text-[10px] uppercase tracking-[0.25em] text-amber-200/90 font-medium block mb-1">
                 Consulta Online
               </span>
-              <h3 className={`${playfair.className} text-2xl sm:text-3xl font-normal text-white leading-tight`}>
+              <h3 className={`${playfair.className} text-xl sm:text-2xl md:text-3xl font-normal text-white leading-tight`}>
                 Cassese &amp; Saravia
               </h3>
             </div>
 
-            <p className={`${inter.className} text-xs text-slate-300 font-light leading-relaxed`}>
+            <p className={`${inter.className} text-xs text-slate-300 font-light leading-relaxed hidden sm:block`}>
               Coordinemos una videollamada individual de 45 minutos para analizar la situación jurídica de su caso.
             </p>
 
-            <div className="space-y-3 pt-4 sm:pt-5 border-t border-slate-800/80">
-              <div className="flex items-start gap-3 text-xs text-slate-300 font-light">
-                <FaVideo className="text-amber-200/80 text-sm mt-0.5 shrink-0" />
-                <div>
-                  <span className="font-medium text-white block">Reunión por Google Meet</span>
-                  <span className="text-[11px] text-slate-400 block leading-tight">El enlace de acceso se enviará a su correo.</span>
-                </div>
+            {/* Badges / Datos rápidos */}
+            <div className="flex flex-col gap-2 pt-2 sm:pt-4 border-t border-slate-800/80 text-[11px] sm:text-xs text-slate-300 font-light">
+              <div className="flex items-center gap-2.5">
+                <FaVideo className="text-amber-200/90 text-xs shrink-0" />
+                <span>Videollamada por <strong>Google Meet</strong></span>
               </div>
-
-              <div className="flex items-center gap-3 text-xs text-slate-300 font-light pt-1">
-                <FaShieldHalved className="text-amber-200/80 text-sm shrink-0" />
-                <span>Secreto profesional y confidencialidad.</span>
+              <div className="flex items-center gap-2.5">
+                <FaShieldHalved className="text-amber-200/90 text-xs shrink-0" />
+                <span>Secreto profesional y confidencialidad</span>
               </div>
             </div>
           </div>
 
-          <div className="pt-6 border-t border-slate-800/80 mt-6 hidden md:block">
+          <div className="pt-4 border-t border-slate-800/80 mt-4 hidden md:block">
             <span className={`${playfair.className} text-xs italic text-amber-100/80 leading-relaxed block`}>
               &quot;Un espacio de escucha atenta y análisis minucioso para encontrar la mejor estrategia para su caso.&quot;
             </span>
           </div>
         </div>
 
-        {/* COLUMNA DERECHA: FORMULARIO */}
-        <div className="w-full md:w-7/12 p-6 sm:p-9 bg-white flex flex-col justify-center overflow-y-auto">
+        {/* COLUMNA DERECHA: FORMULARIO (Con scroll independiente interno) */}
+        <div className="w-full md:w-7/12 p-5 sm:p-8 bg-white overflow-y-auto flex-1">
           {!reservaConfirmada ? (
-            <form onSubmit={handleSubmit} className="space-y-4">
+            <form onSubmit={handleSubmit} className="space-y-3.5">
               <div>
-                <h4 className={`${playfair.className} text-xl sm:text-2xl font-normal text-slate-950`}>
+                <h4 className={`${playfair.className} text-lg sm:text-2xl font-normal text-slate-950`}>
                   Reservar Turno
                 </h4>
-                <p className={`${inter.className} text-xs text-slate-500 font-light mt-0.5`}>
-                  Seleccione la fecha y complete sus datos de contacto.
+                <p className={`${inter.className} text-[11px] sm:text-xs text-slate-500 font-light mt-0.5`}>
+                  Seleccione fecha, horario y complete sus datos.
                 </p>
               </div>
 
               {/* SELECCIÓN DE FECHA Y HORARIO */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-1">
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 pt-1">
                 <div>
-                  <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 flex items-center gap-1.5`}>
+                  <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 flex items-center gap-1.5`}>
                     <FaCalendarDays className="text-amber-800" />
                     Fecha
                   </label>
@@ -138,7 +136,7 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                 </div>
 
                 <div>
-                  <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 flex items-center gap-1.5`}>
+                  <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 flex items-center gap-1.5`}>
                     <FaClock className="text-amber-800" />
                     Horario
                   </label>
@@ -150,7 +148,7 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                     className="w-full bg-slate-50 border border-slate-200 rounded-lg px-3 py-2 text-xs text-slate-900 focus:outline-none focus:border-slate-950 disabled:opacity-40 transition-colors"
                   >
                     <option value="">
-                      {fechaSeleccionada ? "Seleccionar horario" : "Elija el día primero"}
+                      {fechaSeleccionada ? "Seleccionar hora" : "Elija el día primero"}
                     </option>
                     {horariosDisponibles.map((hora) => (
                       <option key={hora} value={hora}>
@@ -162,9 +160,9 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
               </div>
 
               {/* DATOS PERSONALES */}
-              <div className="space-y-3 pt-1">
+              <div className="space-y-2.5">
                 <div>
-                  <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
+                  <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
                     Nombre y Apellido
                   </label>
                   <input
@@ -177,9 +175,9 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                   />
                 </div>
 
-                <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+                <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
                   <div>
-                    <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
+                    <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
                       Correo Electrónico
                     </label>
                     <input
@@ -193,7 +191,7 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                   </div>
 
                   <div>
-                    <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
+                    <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
                       WhatsApp / Teléfono
                     </label>
                     <input
@@ -208,7 +206,7 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                 </div>
 
                 <div>
-                  <label className={`${inter.className} text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
+                  <label className={`${inter.className} text-[9px] sm:text-[10px] uppercase tracking-widest text-slate-500 font-semibold mb-1 block`}>
                     Materia de Consulta
                   </label>
                   <select
@@ -228,19 +226,19 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
               <button
                 type="submit"
                 disabled={!fechaSeleccionada || !horaSeleccionada || isSubmitting}
-                className="w-full bg-slate-950 text-white text-xs uppercase tracking-widest font-semibold py-3.5 rounded-full hover:bg-amber-800 transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed mt-2 cursor-pointer"
+                className="w-full bg-slate-950 text-white text-[11px] sm:text-xs uppercase tracking-widest font-semibold py-3 sm:py-3.5 rounded-full hover:bg-amber-900 transition-colors duration-300 disabled:opacity-40 disabled:cursor-not-allowed mt-3 cursor-pointer shadow-md"
               >
                 {isSubmitting ? "Agendando..." : "Confirmar Reserva por Google Meet"}
               </button>
             </form>
           ) : (
             /* COMPROBANTE DE ÉXITO */
-            <div className="py-2 sm:py-4 space-y-4 sm:space-y-5 my-auto text-center sm:text-left">
-              <div className="flex items-center gap-3 justify-center sm:justify-start">
-                <div className="w-8 h-8 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-xs shrink-0">
+            <div className="py-3 space-y-4 my-auto text-center sm:text-left">
+              <div className="flex items-center gap-2.5 justify-center sm:justify-start">
+                <div className="w-7 h-7 bg-emerald-100 text-emerald-700 rounded-full flex items-center justify-center text-xs shrink-0">
                   <FaCheck />
                 </div>
-                <span className="text-xs font-semibold uppercase tracking-wider text-emerald-800">
+                <span className="text-[11px] sm:text-xs font-semibold uppercase tracking-wider text-emerald-800">
                   Reserva Registrada
                 </span>
               </div>
@@ -250,11 +248,11 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
                   ¡Nos vemos en Google Meet!
                 </h4>
                 <p className={`${inter.className} text-xs text-slate-500 font-light mt-1`}>
-                  Enviamos la invitación de la videollamada a <span className="font-medium text-slate-800">{formData.email}</span>.
+                  Enviamos la invitación a <span className="font-medium text-slate-800">{formData.email}</span>.
                 </p>
               </div>
 
-              <div className="bg-slate-50 rounded-xl p-4 border border-slate-200 text-xs space-y-2 text-left">
+              <div className="bg-slate-50 rounded-xl p-3.5 border border-slate-200 text-xs space-y-2 text-left">
                 <div className="flex justify-between items-center gap-2">
                   <span className="text-slate-500">Cliente:</span>
                   <span className="font-medium text-slate-900 truncate">{formData.nombre}</span>
@@ -278,7 +276,7 @@ export default function ModalTurnos({ isOpen, onClose }: ModalTurnosProps) {
               <button
                 type="button"
                 onClick={handleReset}
-                className="w-full sm:w-auto bg-slate-950 text-white text-xs font-medium px-8 py-3 rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
+                className="w-full sm:w-auto bg-slate-950 text-white text-xs font-medium px-8 py-2.5 rounded-full hover:bg-slate-800 transition-colors cursor-pointer"
               >
                 Finalizar
               </button>
